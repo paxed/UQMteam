@@ -322,7 +322,7 @@ if (strlen(trim($seedi)) < 1)
   $seedi = make_seed();
 
 if (isset($dupships) && (($dupships < 1) || ($dupships > $SHIPS_PER_TEAM)))
-  unset($dupships);
+  $dupships = NULL;
 
 srand($seedi);
 
