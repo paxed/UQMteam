@@ -275,9 +275,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if (isset($_POST['maxship']))
     $maxship = $_POST['maxship'];
+  else $maxship = NULL;
 
   if (isset($_POST['dupships']))
     $dupships = $_POST['dupships'];
+  else $dupships = NULL;
 
 } else {
   if (!isset($_GET['seed']))
@@ -299,9 +301,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if (isset($_GET['maxship']))
     $maxship = $_GET['maxship'];
+  else $maxship = NULL;
 
   if (isset($_GET['dupships']))
     $dupships = $_GET['dupships'];
+  else $dupships = NULL;
 
 }
 
@@ -323,9 +327,6 @@ if (isset($dupships) && (($dupships < 1) || ($dupships > $SHIPS_PER_TEAM)))
 srand($seedi);
 
 $allow = check_allow($allow);
-
-if (!isset($maxship)) $maxship = NULL;
-if (!isset($dupships)) $dupships = NULL;
 
 $team1 = mk_team($points, generate_allowed_ships($allow, 1), $maxship, $dupships);
 $team2 = mk_team($points, generate_allowed_ships($allow, 2), $maxship, $dupships);
