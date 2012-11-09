@@ -344,7 +344,7 @@ if (isset($_GET['download'])) {
     header('Content-Length: 140');
     header('Content-Disposition: attachment; filename="melee.cfg"');
 
-    binary_team($team1name, $team1, $CONTROL_PLAYER);
+    binary_team($team1name, $team1, $CONTROL_HUMAN);
     binary_team($team2name, $team2, $CONTROL_AI|$AI_GOOD|$AUTO_SELECT_SHIP);
     exit;
   } else if ($_GET['download'] == 2) {
